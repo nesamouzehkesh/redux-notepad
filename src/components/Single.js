@@ -9,7 +9,7 @@ const Single = ({ note, removeNote }) => {
           <p>{note.details}</p>
         </div>
         <div className="card-action">
-          <a onClick={() => removeNote(note.id)}>Delete</a>
+          <a onClick={() => removeNote(note)}>Delete</a>
         </div>
       </div>
     </li>
