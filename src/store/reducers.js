@@ -10,13 +10,18 @@ const initialState = {
   notes: [
     {
       id: '2636hds',
-      title: 'An example note',
-      details: 'This is an example note'
+      title: 'The Legend of ZELDA',
+      details: 'Breath of the wild!'
     },
     {
       id: '8383gtdb',
-      title: 'Another example note',
-      details: 'This is an example note again!'
+      title: 'Super MARIO Odyssey',
+      details: 'Caps off to Mario!'
+    },
+    {
+      id: '8383gtdb2',
+      title: 'What is Next?',
+      details: 'Nino Kuni for Nintendo switch!!!'
     }
   ],
   name: 'Nesa'
@@ -43,7 +48,7 @@ export default (state = initialState, action) => {
     case 'REMOVE_NOTE': {
       return {
         ...state,
-        notes: state.notes.filter(note => note.id !== action.note.id),
+        notes: state.notes.filter(note => note !== action.note),
       }
     }
 
