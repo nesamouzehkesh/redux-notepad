@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import Single from './Single';
 
 export default class Grid extends Component {
-  removeNote(id) {
+  removeNote = (id) => {
+    console.log(id);
     this.props.removeNote(id);
   }
-  renderItems(){
+  renderItems() {
     return this.props.notes.map(item =>
       <Single
-          key={item.id}
-          note={item}
-          removeNote={this.removeNote.bind(this)}
+        key={item.id}
+        note={item}
+        removeNote={this.removeNote}
       />
-      );
+    );
   }
   render() {
     return (

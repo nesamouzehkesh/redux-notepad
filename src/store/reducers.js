@@ -9,9 +9,9 @@
 const initialState = {
   notes: [
     {
-    id: '2636hds',
-    title: 'An example note',
-    details: 'This is an example note'
+      id: '2636hds',
+      title: 'An example note',
+      details: 'This is an example note'
     },
     {
       id: '8383gtdb',
@@ -31,29 +31,29 @@ const initialState = {
  * copy and adding whatever the action you have added to it
  */
 
- export default (state = initialState, action) => {
-   switch(action.type) {
-     case 'ADD_NOTE':
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case 'ADD_NOTE':
       return {
         ...state, //returning the state
         notes: [...state.notes, action.note], //add the new note to the notes state
       }
 
-      //'filter' always returns: a new array with the elements that pass the test.
-      case 'REMOVE_NOTE': {
-        return {
-          ...state,
-          notes: state.notes.filter(note => note !== action.note),
-        }
+    //'filter' always returns: a new array with the elements that pass the test.
+    case 'REMOVE_NOTE': {
+      return {
+        ...state,
+        notes: state.notes.filter(note => note.id !== action.note.id),
       }
+    }
 
-      case 'GET_NOTES': {
-        return {
-          ...state,
-        }
+    case 'GET_NOTES': {
+      return {
+        ...state,
       }
+    }
 
-      default:
-        return state;
-   }
- }
+    default:
+      return state;
+  }
+}
